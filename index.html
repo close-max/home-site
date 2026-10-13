@@ -3,77 +3,179 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>homepage</title>
+<title>主页</title>
 <style>
-  body {
-    font-family: Georgia, "Times New Roman", "Songti SC", serif;
-    background: #ffffff;
-    color: #000000;
-    margin: 0;
-    padding: 40px 20px;
-    text-align: center;
-  }
-  .topnav {
-    font-size: 17px;
-    margin-bottom: 40px;
-    line-height: 1.8;
-  }
-  .topnav a {
-    color: #0000EE;
-    text-decoration: underline;
-    margin: 0 4px;
-  }
-  .topnav a:visited { color: #551A8B; }
-  .topnav .sep { color: #000; margin: 0 2px; }
+    * { box-sizing: border-box; }
 
-  h1 { font-size: 34px; font-weight: bold; margin: 0 0 40px 0; }
+    body {
+        font-family: -apple-system, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+        font-size: 15px;
+        line-height: 1.6;
+        color: #000;
+        background: #fff;
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 60px 20px 40px 20px;
+    }
 
-  .photo {
-    display: block;
-    margin: 0 auto 40px auto;
-    max-width: 200px;
-    width: 100%;
-    height: auto;
-  }
-  .location {
-    font-size: 15px;
-    color: #666;
-    margin: -20px 0 30px 0;
-  }
+    h1 {
+        font-size: 36px;
+        font-weight: bold;
+        margin: 0 0 8px 0;
+        letter-spacing: -0.5px;
+    }
 
-  .intro {
-    max-width: 1050px;
-    margin: 0 auto;
-    text-align: left;
-    font-size: 17px;
-    line-height: 1.7;
-  }
-  .intro a { color: #0000EE; text-decoration: underline; }
+    .subtitle {
+        font-size: 16px;
+        color: #666;
+        margin: 0 0 24px 0;
+    }
+
+    .intro {
+        font-size: 15px;
+        margin: 0 0 8px 0;
+    }
+
+    h2 {
+        font-size: 20px;
+        font-weight: bold;
+        margin: 48px 0 16px 0;
+        padding-bottom: 8px;
+        border-bottom: 1px solid #E0E0E0;
+    }
+
+    p { margin: 0 0 16px 0; }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 16px 0 24px 0;
+        font-size: 14px;
+    }
+
+    th, td {
+        border: 1px solid #000;
+        padding: 8px 12px;
+        text-align: left;
+        vertical-align: top;
+    }
+
+    th {
+        font-weight: bold;
+        background: #f5f5f5;
+        white-space: nowrap;
+    }
+
+    th:nth-child(1), td:nth-child(1) { width: 16%; }
+    th:nth-child(2), td:nth-child(2) { width: 44%; }
+    th:nth-child(3), td:nth-child(3) { width: 20%; }
+    th:nth-child(4), td:nth-child(4) { width: 20%; }
+
+    a { color: #0000EE; text-decoration: underline; }
+    a:visited { color: #551A8B; }
+
+    ul {
+        padding-left: 0;
+        margin: 0 0 16px 0;
+        list-style: none;
+    }
+
+    ul li {
+        margin-bottom: 8px;
+        font-size: 14px;
+        display: flex;
+        align-items: baseline;
+    }
+
+    ul li .date {
+        color: #666;
+        margin-right: 16px;
+        font-family: "SF Mono", Consolas, Menlo, monospace;
+        font-size: 13px;
+        flex-shrink: 0;
+    }
+
+    footer {
+        margin-top: 60px;
+        font-size: 13px;
+        color: #666;
+        border-top: 1px solid #E0E0E0;
+        padding-top: 12px;
+    }
+
+    footer a { color: #0000EE; }
+
+    @media (max-width: 640px) {
+        body { padding: 30px 12px 20px 12px; }
+        h1 { font-size: 28px; }
+        h2 { font-size: 18px; }
+        table { font-size: 13px; }
+        th, td { padding: 6px 8px; }
+        th:nth-child(3), td:nth-child(3) { display: none; }
+    }
 </style>
 </head>
 <body>
 
-  <!-- 顶部导航：价值投资 指向 value.html -->
-  <div class="topnav">
-    <a href="#factor">因子研究</a><span class="sep">|</span>
-    <a href="#strategy">策略开发</a><span class="sep">|</span>
-    <a href="#backtest">回测框架</a><span class="sep">|</span>
-    <a href="#trade">交易系统</a><span class="sep">|</span>
-    <a href="#ml">机器学习</a><span class="sep">|</span>
-    <a href="#programming">程序设计</a><span class="sep">|</span>
-	<a href="#aboat">关于我</a>
-  </div>
+<h1>PaulChen</h1>
+<p class="subtitle">量化研究员 · 上海</p>
 
-  <h1>欢迎来到我的个人主页！</h1>
+<p class="intro">
+过去 10 年，我先后在私募、互联网公司及期货风险管理子公司工作，专注程序化交易。
+</p>
 
-  <img class="photo" src="images/PaulChen.jpg" alt="PaulChen">
-  <p class="location">中国·上海</p>
+<h2>项目</h2>
+<table>
+    <thead>
+        <tr>
+            <th>项目</th>
+            <th>说明</th>
+            <th>理论</th>
+            <th>仓库</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>统计套利</td>
+            <td>协整 + 均值回归，跨期套利（AO2701/AO2702）</td>
+            <td><a href="theory/stat-arb.html">笔记</a></td>
+            <td><a href="https://github.com/close-max/stat-arb">GitHub</a></td>
+        </tr>
+        <tr>
+            <td>高频预测</td>
+            <td>多因子 + 机器学习，C++提取因子，预测未来短期收益率</td>
+            <td><a href="/theory/hf-predict.html">笔记</a></td>
+            <td><a href="https://github.com/close-max/hf-predict">GitHub</a></td>
+        </tr>
+        <tr>
+            <td>规则策略</td>
+            <td>规则进场 + 过滤条件 + 多维度出场机制</td>
+            <td><a href="/theory/rule-strategy.html">笔记</a></td>
+            <td><a href="https://github.com/close-max/rule-strategy">GitHub</a></td>
+        </tr>
+        <tr>
+            <td>基本面策略</td>
+            <td>库存/产量/月差/基差 → 构造因子 → 模型预测</td>
+            <td><a href="/theory/fundamental.html">笔记</a></td>
+            <td><a href="https://github.com/close-max/fundamental">GitHub</a></td>
+        </tr>
+        <tr>
+            <td>交易系统</td>
+            <td>基于 CTP 的多策略交易系统</td>
+            <td><a href="/theory/trading-system.html">架构设计</a></td>
+            <td><a href="https://github.com/close-max/ctp-trader">GitHub</a></td>
+        </tr>
+    </tbody>
+</table>
 
-  <div class="intro">
-    <p>
-      我是一名量化研究员。过去10年，我先后在私募、互联网公司及期货风险管理子公司工作。我对交易，尤其是程序化交易怀有极大兴趣。
-    </p>
-  </div>
+<h2>最近更新</h2>
+<ul>
+    <li><span class="date">2026-10-13</span><a href="/theory/stat-arb.html">添加统计套利项目</a></li>
+</ul>
+
+<footer>
+    © 2026 PaulChen · <a href="https://github.com/close-max">GitHub</a> · <a href="mailto:573051424@qq.com">Email</a>
+</footer>
 
 </body>
 </html>
